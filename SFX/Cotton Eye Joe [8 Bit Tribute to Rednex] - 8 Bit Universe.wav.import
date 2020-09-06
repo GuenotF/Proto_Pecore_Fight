@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Cotton Eye Joe [8 Bit Tribute to Rednex] - 8 Bit Universe.wav-390fd4b28d2b56cd5798b01ad4a4c487.sample"
+
+[deps]
+
+source_file="res://SFX/Cotton Eye Joe [8 Bit Tribute to Rednex] - 8 Bit Universe.wav"
+dest_files=[ "res://.import/Cotton Eye Joe [8 Bit Tribute to Rednex] - 8 Bit Universe.wav-390fd4b28d2b56cd5798b01ad4a4c487.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
