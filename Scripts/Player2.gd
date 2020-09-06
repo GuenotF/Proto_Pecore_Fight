@@ -47,7 +47,7 @@ func _physics_process(_delta):
 	
 func aim():
 	# Manage Rotation
-	if look_dir.x >= deadzone and look_dir.y >= deadzone:
+	if look_dir.x <= deadzone:
 		look_dir.x = Input.get_joy_axis(1, JOY_AXIS_2)
 		look_dir.y = Input.get_joy_axis(1, JOY_AXIS_3)
 		rotation = look_dir.angle()

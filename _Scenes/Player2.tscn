@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprites/Dude2.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Particles/Blood_Particle.png" type="Texture" id=3]
 
-[sub_resource type="ParticlesMaterial" id=2]
+[sub_resource type="ParticlesMaterial" id=1]
 lifetime_randomness = 0.2
 emission_shape = 2
 emission_box_extents = Vector3( 20, 1, 1 )
@@ -14,7 +14,7 @@ gravity = Vector3( 0, 98, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 88.9705, 25.2648 )
 
 [node name="Player2" type="KinematicBody2D" groups=[
@@ -32,7 +32,7 @@ lifetime = 1.2
 speed_scale = 2.0
 randomness = 0.3
 local_coords = false
-process_material = SubResource( 2 )
+process_material = SubResource( 1 )
 texture = ExtResource( 3 )
 __meta__ = {
 "_editor_description_": ""
@@ -45,7 +45,7 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.943851, 7.551 )
 rotation = 1.5708
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Shoot_Start" type="Position2D" parent="."]
 position = Vector2( 34.9235, 107.602 )
