@@ -22,7 +22,7 @@ extents = Vector2( 88.9705, 25.2648 )
 ]]
 rotation = 1.5708
 script = ExtResource( 1 )
-life = 2
+fire_rate = 0.5
 
 [node name="Blood" type="Particles2D" parent="."]
 position = Vector2( 19.8901, 7.72976 )

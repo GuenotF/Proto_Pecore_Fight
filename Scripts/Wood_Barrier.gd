@@ -19,14 +19,16 @@ func _ready():
 	pass
 
 func hit():
+	$Hit_Sound.play()
 	life = life - 1
 	barrier_sprite.set_texture(sprites[life])
 	print(life)
 	
 		
 	if life <= 0:
+		$Hit_Sound.play()
+		yield($Hit_Sound, "finished")
 		self.queue_free()
 
 func _process(delta):
-	if life <= 0:
-		self.queue_free()
+	pass

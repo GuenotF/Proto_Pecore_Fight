@@ -1,18 +1,32 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://_Scenes/Player1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://_Scenes/Bush.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sprites/Maps/Proto_Map-1.png" type="Texture" id=3]
+[ext_resource path="res://_Scenes/HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://_Scenes/Player2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sprites/Maps/Proto_Map-1.png" type="Texture" id=5]
 [ext_resource path="res://_Scenes/Wood_Barrier.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/Map.gd" type="Script" id=7]
 
 [node name="Map" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 622.956, 375.662 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Water1" type="KinematicBody2D" parent="."]
 position = Vector2( 349.22, 0.434708 )
 rotation = 2.04431
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Water1"]
+position = Vector2( -2.25836, 3.10014 )
+scale = Vector2( 0.982303, 0.948825 )
 polygon = PoolVector2Array( 0.662537, 3.12872, 93.1448, -49.6091, 158.645, -102.791, 54.1494, -188.373, 7.73882, -143.189, -61.5556, -114.818 )
 
 [node name="Water2" type="KinematicBody2D" parent="."]
@@ -20,22 +34,17 @@ position = Vector2( 476.212, 267.118 )
 rotation = 2.04431
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Water2"]
+position = Vector2( -2.30775, 1.17157 )
 rotation = 0.519477
-polygon = PoolVector2Array( -1.86087, -0.21405, -30.71, -22.815, -36.6742, -49.1241, -47.087, -28.2613, -59.8696, -21.7063, -79.9534, -28.4205, -103.347, -44.738, -104.971, -58.5592, -96.4719, -73.225, -78.4981, -79.5858, -53.8734, -87.9912, -51.5409, -125.822, -46.3192, -146.879, -56.6711, -168.519, -59.3005, -184.059, -159.425, -188.722, -141.901, -142.198, -124.409, -98.8861, -111.622, -56.5146, -100.262, -8.69232 )
+scale = Vector2( 0.993122, 1.00882 )
+polygon = PoolVector2Array( -2.45139, -9.02026, -30.71, -22.815, -36.6742, -49.1241, -47.087, -28.2613, -59.8696, -21.7063, -79.9534, -28.4205, -103.347, -44.738, -104.971, -58.5592, -96.4719, -73.225, -78.4981, -79.5858, -53.8734, -87.9912, -51.5409, -125.822, -46.3192, -146.879, -56.6711, -168.519, -57.9595, -176.743, -157.187, -181.926, -141.901, -142.198, -124.409, -98.8861, -111.622, -56.5146, -102.559, -18.3144 )
 
 [node name="Water3" type="KinematicBody2D" parent="."]
 position = Vector2( 716.755, 471.134 )
 rotation = 2.04431
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Water3"]
-polygon = PoolVector2Array( 1.51407, -0.374939, 16.7155, -50.4148, 31.0363, -94.8323, 51.653, -135.734, 64.9584, -147.046, 60.1641, -179.086, 61.6369, -211.338, 114.344, -238.368, 134.745, -235.726, 138.657, -223.445, 183.822, -256.111, 122.465, -375.859, 55.7062, -322.605, -13.2578, -252.746, -51.0828, -196.461, -80.7648, -131.254, -95.6801, -58.1371 )
-
-[node name="Background" type="Sprite" parent="."]
-position = Vector2( 622.956, 375.662 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
+polygon = PoolVector2Array( 5.12366, -6.22839, 16.7155, -50.4148, 31.0363, -94.8323, 51.653, -135.734, 64.9584, -147.046, 60.1641, -179.086, 61.6369, -211.338, 114.344, -238.368, 134.745, -235.726, 138.657, -223.445, 183.822, -256.111, 122.465, -375.859, 55.7062, -322.605, -13.2578, -252.746, -51.0828, -196.461, -80.7648, -131.254, -92.5405, -64.364 )
 
 [node name="Player1" parent="." instance=ExtResource( 1 )]
 position = Vector2( 98.9635, 146.816 )
@@ -51,13 +60,17 @@ scale = Vector2( 0.6, 0.6 )
 position = Vector2( 644.491, 576.077 )
 rotation = 7.16916
 
+[node name="Bush21" parent="." instance=ExtResource( 2 )]
+position = Vector2( 318.422, 121.719 )
+rotation = 4.7956
+
 [node name="Bush19" parent="." instance=ExtResource( 2 )]
-position = Vector2( 711.161, 252.247 )
-rotation = 8.51257
+position = Vector2( 707.598, 216.611 )
+rotation = 8.1131
 
 [node name="Bush20" parent="." instance=ExtResource( 2 )]
-position = Vector2( 858.79, 134.779 )
-rotation = 5.78514
+position = Vector2( 1083.3, 166.852 )
+rotation = 9.90886
 
 [node name="Bush5" parent="." instance=ExtResource( 2 )]
 position = Vector2( 6, 452.593 )
@@ -121,6 +134,6 @@ rotation = 2.56905
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Wood_Barrier2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1000.13, 589.061 )
-rotation = 1.25058
+position = Vector2( 976.97, 483.935 )
+rotation = 1.48007
 scale = Vector2( 0.5, 0.5 )

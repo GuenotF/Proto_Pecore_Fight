@@ -16,7 +16,7 @@ var is_slowed = false
 
 var movedir = Vector2(0,0)
 var look_dir = Vector2()
-var deadzone = 0.5
+var deadzone = 0.8
 
 
 func _ready():
@@ -47,12 +47,13 @@ func _physics_process(_delta):
 	
 func aim():
 	# Manage Rotation
-	if look_dir.y <= deadzone:
+	if look_dir.x >= deadzone and look_dir.y >= deadzone:
 		look_dir.x = Input.get_joy_axis(1, JOY_AXIS_2)
 		look_dir.y = Input.get_joy_axis(1, JOY_AXIS_3)
 		rotation = look_dir.angle()
 	else:
-		look_dir.y = 0.5
+		look_dir.x = 0
+		look_dir.y = 0
 
 func shoot():
 	var w = weapon.instance()
