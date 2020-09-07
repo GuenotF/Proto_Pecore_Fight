@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Sprites/Dude.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Dudes/Dude.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Player1.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Particles/Blood_Particle.png" type="Texture" id=3]
 
 [sub_resource type="ParticlesMaterial" id=1]
@@ -36,8 +36,13 @@ local_coords = false
 process_material = SubResource( 1 )
 texture = ExtResource( 3 )
 
+[node name="Shoot_Start" type="Position2D" parent="."]
+position = Vector2( 23.5718, 79.6948 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 173.872, -370.618 )
 rotation = 1.5708
 texture = ExtResource( 1 )
 
@@ -45,12 +50,6 @@ texture = ExtResource( 1 )
 position = Vector2( 0, 7.68842 )
 rotation = 1.5708
 shape = SubResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Shoot_Start" type="Position2D" parent="."]
-position = Vector2( 23.5718, 79.6948 )
 __meta__ = {
 "_edit_lock_": true
 }

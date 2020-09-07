@@ -9,7 +9,7 @@ export var weapon_range = 0.5
 var travel_time = Timer.new()
 
 func _ready():
-	set_scale(Vector2(0.2, 0.2))
+	#set_scale(Vector2(0.2, 0.2))
 	$AnimatedSprite.play("default")
 	weapon_range()
 

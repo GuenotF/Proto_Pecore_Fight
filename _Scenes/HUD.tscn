@@ -3,16 +3,17 @@
 [ext_resource path="res://Sprites/HUD/Pecore1.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/HUD/Pecore2.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/HUD/Pecore2_Wins.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Proto_Life_Points/health_bar_02.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/HUD/Proto_Life_Points/health_bar_02.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/HUD/Pecore1_Wins.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/HUD/Proto_Restart.png" type="Texture" id=6]
 [ext_resource path="res://SFX/p1_wins.wav" type="AudioStream" id=7]
 [ext_resource path="res://SFX/p2_wins.wav" type="AudioStream" id=8]
 [ext_resource path="res://SFX/hurt_1.wav" type="AudioStream" id=9]
-[ext_resource path="res://Sprites/Proto_Life_Points/health_bar_05.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/HUD/Proto_Life_Points/health_bar_05.png" type="Texture" id=10]
 [ext_resource path="res://SFX/hurt_2.wav" type="AudioStream" id=11]
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=12]
 [ext_resource path="res://SFX/Cotton Eye Joe [8 Bit Tribute to Rednex] - 8 Bit Universe.wav" type="AudioStream" id=13]
+
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 12 )

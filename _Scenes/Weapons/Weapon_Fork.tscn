@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Weapon_Fork.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Proto_Fork_small.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Destroy/Proto_Fork/fork_destroy0.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Destroy/Proto_Fork/fork_destroy3.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Destroy/Proto_Fork/fork_destroy6.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Destroy/Proto_Fork/fork_destroy2.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Destroy/Proto_Fork/fork_destroy4.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Destroy/Proto_Fork/fork_destroy5.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Destroy/Proto_Fork/fork_destroy1.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Weapons/Proto_Fork_small.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Weapons/Destroy/Proto_Fork/fork_destroy0.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Weapons/Destroy/Proto_Fork/fork_destroy3.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Weapons/Destroy/Proto_Fork/fork_destroy6.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Weapons/Destroy/Proto_Fork/fork_destroy2.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Weapons/Destroy/Proto_Fork/fork_destroy4.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Weapons/Destroy/Proto_Fork/fork_destroy5.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Weapons/Destroy/Proto_Fork/fork_destroy1.png" type="Texture" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -24,8 +24,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 26.1233
-height = 93.7157
+radius = 27.0672
+height = 52.185
 
 [node name="Weapon_Fork" type="Area2D"]
 z_as_relative = false
@@ -38,9 +38,13 @@ frames = SubResource( 1 )
 animation = "destroy"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 16.9898, 0.943878 )
 rotation = 1.5708
 shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 [connection signal="body_entered" from="." to="." method="_on_Weapon_Fork_body_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

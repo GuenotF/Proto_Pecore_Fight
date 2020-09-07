@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var bush_low = preload("res://Sprites/Proto_Bush-2.png")
+var bush_low = preload("res://Sprites/Walls/Proto_Bush-2.png")
 onready var bush_sprite = get_node("Sprite")
 
 export var life = 1

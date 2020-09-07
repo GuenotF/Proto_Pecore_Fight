@@ -1,16 +1,16 @@
 extends CanvasLayer
 
-var hb_10 = preload("res://Sprites/Proto_Life_Points/health_bar_10.png")
-var hb_09 = preload("res://Sprites/Proto_Life_Points/health_bar_09.png")
-var hb_08 = preload("res://Sprites/Proto_Life_Points/health_bar_08.png")
-var hb_07 = preload("res://Sprites/Proto_Life_Points/health_bar_07.png")
-var hb_06 = preload("res://Sprites/Proto_Life_Points/health_bar_06.png")
-var hb_05 = preload("res://Sprites/Proto_Life_Points/health_bar_05.png")
-var hb_04 = preload("res://Sprites/Proto_Life_Points/health_bar_04.png")
-var hb_03 = preload("res://Sprites/Proto_Life_Points/health_bar_03.png")
-var hb_02 = preload("res://Sprites/Proto_Life_Points/health_bar_02.png")
-var hb_01 = preload("res://Sprites/Proto_Life_Points/health_bar_01.png")
-var hb_00 = preload("res://Sprites/Proto_Life_Points/health_bar_00.png")
+var hb_10 = preload("res://Sprites/HUD/Proto_Life_Points/health_bar_10.png")
+var hb_09 = preload("res://Sprites/HUD/Proto_Life_Points/health_bar_09.png")
+var hb_08 = preload("res://Sprites/HUD/Proto_Life_Points/health_bar_08.png")
+var hb_07 = preload("res://Sprites/HUD/Proto_Life_Points/health_bar_07.png")
+var hb_06 = preload("res://Sprites/HUD/Proto_Life_Points/health_bar_06.png")
+var hb_05 = preload("res://Sprites/HUD/Proto_Life_Points/health_bar_05.png")
+var hb_04 = preload("res://Sprites/HUD/Proto_Life_Points/health_bar_04.png")
+var hb_03 = preload("res://Sprites/HUD/Proto_Life_Points/health_bar_03.png")
+var hb_02 = preload("res://Sprites/HUD/Proto_Life_Points/health_bar_02.png")
+var hb_01 = preload("res://Sprites/HUD/Proto_Life_Points/health_bar_01.png")
+var hb_00 = preload("res://Sprites/HUD/Proto_Life_Points/health_bar_00.png")
 
 var life = [hb_00, hb_01, hb_02, hb_03, hb_04, hb_05, hb_06, hb_07, hb_08, hb_09, hb_10]
 

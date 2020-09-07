@@ -1,8 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Player2.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Dude2.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Dudes/Dude2.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Particles/Blood_Particle.png" type="Texture" id=3]
+
 
 [sub_resource type="ParticlesMaterial" id=1]
 lifetime_randomness = 0.2
@@ -38,6 +39,9 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="Shoot_Start" type="Position2D" parent="."]
+position = Vector2( 22.2242, 81.4099 )
+
 [node name="Sprite" type="Sprite" parent="."]
 rotation = 1.5708
 texture = ExtResource( 2 )
@@ -46,6 +50,3 @@ texture = ExtResource( 2 )
 position = Vector2( -0.943851, 7.551 )
 rotation = 1.5708
 shape = SubResource( 2 )
-
-[node name="Shoot_Start" type="Position2D" parent="."]
-position = Vector2( 34.9235, 107.602 )

@@ -51,9 +51,6 @@ func aim():
 	look_dir.y = Input.get_joy_axis(1, JOY_AXIS_3)
 	if  look_dir.length() >= deadzone:
 		rotation = look_dir.angle()
-	#else:
-	#look_dir.x = 0
-	#look_dir.y = 0
 
 func shoot():
 	var w = weapon.instance()
@@ -72,7 +69,7 @@ func shoot():
 func hit():
 	life = life - 1
 	
-	slow()
+	slowed()
 	bleeds()
 	
 	#print("Player " + life)
@@ -81,13 +78,12 @@ func hit():
 		if life <= 0:
 			self.queue_free()
 
-func slow():
+func slowed():
 	is_slowed = true
 	yield(get_tree().create_timer(slow_duration), "timeout")
 	is_slowed = false
 
 func bleeds():
-	
 	$Blood.show()
 	yield(get_tree().create_timer(bleed_duration), "timeout")
 	$Blood.hide()

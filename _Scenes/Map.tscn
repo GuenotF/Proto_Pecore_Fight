@@ -48,11 +48,13 @@ polygon = PoolVector2Array( 5.12366, -6.22839, 16.7155, -50.4148, 31.0363, -94.8
 position = Vector2( 98.9635, 146.816 )
 rotation = 0.714678
 scale = Vector2( 0.6, 0.6 )
+z_index = 1
 
 [node name="Player2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1106.95, 567.344 )
 rotation = 3.46404
 scale = Vector2( 0.6, 0.6 )
+z_index = 1
 
 [node name="Bush4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 644.491, 576.077 )
@@ -135,5 +137,9 @@ scale = Vector2( 0.5, 0.5 )
 position = Vector2( 976.97, 483.935 )
 rotation = 1.48007
 scale = Vector2( 0.5, 0.5 )
+
+[node name="Spawn_Weapon" type="Position2D" parent="."]
+position = Vector2( 288.522, 613.581 )
+z_as_relative = false
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
