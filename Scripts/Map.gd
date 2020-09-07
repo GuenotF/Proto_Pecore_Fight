@@ -13,6 +13,6 @@ func _ready():
 
 
 func _process(delta):
-	if $HUD.p1_winned or $HUD.p2_winned:
+	if $HUD.game_over:
 		if Input.is_action_pressed("start"):
 			get_tree().reload_current_scene()

@@ -47,13 +47,13 @@ func _physics_process(_delta):
 	
 func aim():
 	# Manage Rotation
-	#if  look_dir.length() >= deadzone:
 	look_dir.x = Input.get_joy_axis(1, JOY_AXIS_2)
 	look_dir.y = Input.get_joy_axis(1, JOY_AXIS_3)
-	rotation = look_dir.angle()
+	if  look_dir.length() >= deadzone:
+		rotation = look_dir.angle()
 	#else:
-	look_dir.x = 0
-	look_dir.y = 0
+	#look_dir.x = 0
+	#look_dir.y = 0
 
 func shoot():
 	var w = weapon.instance()
@@ -76,9 +76,10 @@ func hit():
 	bleeds()
 	
 	#print("Player " + life)
-	get_node("../HUD").update_Life_p2(life)
-	if life <= 0:
-		self.queue_free()
+	if !get_node("../HUD").game_over:
+		get_node("../HUD").update_Life_p2(life)
+		if life <= 0:
+			self.queue_free()
 
 func slow():
 	is_slowed = true

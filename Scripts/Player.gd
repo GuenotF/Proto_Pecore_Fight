@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var sprite = Sprite.new()
+
 var weapon = preload("res://_Scenes/Weapons/Weapon_Fork.tscn")
 
 export var speed = 500
@@ -24,6 +26,9 @@ func _ready():
 	screen_size = get_viewport_rect().size
 
 func _physics_process(_delta):
+	
+	addSprite()
+	
 	# Manage Movement
 	movedir.x = -Input.get_action_strength("move_left") + Input.get_action_strength("move_right")
 	movedir.y = +Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
@@ -49,13 +54,14 @@ func _physics_process(_delta):
 
 func aim():
 	# Manage Rotation
-	#if  look_dir.length() >= deadzone:
 	look_dir.x = Input.get_joy_axis(0, JOY_AXIS_2)
 	look_dir.y = Input.get_joy_axis(0, JOY_AXIS_3)
-	rotation = look_dir.angle()
+	
+	if  look_dir.length() >= deadzone:
+		rotation = look_dir.angle()
 	#else:
-	look_dir.x = 0
-	look_dir.y = 0
+	#look_dir.x = 0
+	#look_dir.y = 0
 
 func shoot():
 	var w = weapon.instance()
@@ -80,9 +86,10 @@ func hit():
 	bleeds()
 
 	#print("Player " + life)
-	get_node("../HUD").update_Life_p1(life)
-	if life <= 0:
-		self.queue_free()
+	if !get_node("../HUD").game_over:
+		get_node("../HUD").update_Life_p1(life)
+		if life <= 0:
+			self.queue_free()
 
 func slow():
 	is_slowed = true
@@ -95,4 +102,7 @@ func bleeds():
 	yield(get_tree().create_timer(bleed_duration), "timeout")
 	$Blood.hide()
 
-
+func addSprite():
+	sprite.texture = load("res://icon.png")
+	if Input.is_action_pressed("ui_select"):
+		$Sprite.add_(sprite)

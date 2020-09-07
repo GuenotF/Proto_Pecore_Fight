@@ -22,6 +22,7 @@ onready var restart_btn = get_node("Control/Restart_Btn")
 
 var p1_winned = false;
 var p2_winned = false;
+var game_over = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,6 +42,7 @@ func update_Life_p1(hp):
 	$hurt1.play()
 	life_p1_sprite.set_texture(life[hp])
 	if hp == 0:
+		game_over = true
 		p2_winned = true
 		$sound_P2_Wins.play()
 		p2_wins.show()
@@ -50,6 +52,7 @@ func update_Life_p2(hp):
 	$hurt2.play()
 	life_p2_sprite.set_texture(life[hp])
 	if hp == 0:
+		game_over = true
 		p1_winned = true
 		$sound_P1_Wins.play()
 		p1_wins.show()
