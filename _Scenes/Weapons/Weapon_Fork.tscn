@@ -10,7 +10,7 @@
 [ext_resource path="res://Sprites/Destroy/Proto_Fork/fork_destroy5.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/Destroy/Proto_Fork/fork_destroy1.png" type="Texture" id=9]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
@@ -23,7 +23,7 @@ animations = [ {
 "speed": 30.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 26.1233
 height = 93.7157
 
@@ -31,16 +31,15 @@ height = 93.7157
 z_as_relative = false
 script = ExtResource( 1 )
 speed = 1500
-weapon_range = 0.5
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 rotation = 1.5708
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "destroy"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 [connection signal="body_entered" from="." to="." method="_on_Weapon_Fork_body_entered"]

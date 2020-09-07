@@ -31,7 +31,7 @@ func _ready():
 	life_p1_sprite.set_texture(hb_10)
 	life_p2_sprite.set_texture(hb_10)
 	
-	# $music.play()
+	#$music.play()
 	
 
 func _process(delta):

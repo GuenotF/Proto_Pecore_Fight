@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var barrier_0= preload("res://Sprites/Proto_Barrier/barrier_0.png")
+var barrier_0 = preload("res://Sprites/Proto_Barrier/barrier_0.png")
 var barrier_1 = preload("res://Sprites/Proto_Barrier/barrier_1.png")
 var barrier_2 = preload("res://Sprites/Proto_Barrier/barrier_2.png")
 var barrier_3 = preload("res://Sprites/Proto_Barrier/barrier_3.png")

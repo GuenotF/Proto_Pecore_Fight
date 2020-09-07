@@ -35,15 +35,15 @@ func _on_Weapon_Pan_body_entered(body):
 	if body.is_in_group("walls"):
 		get_node("../" + body.get_name()).hit()
 		speed = 0
-		$AnimatedSprite.play("destroy")
-		yield($AnimatedSprite, "animation_finished")
+		#$AnimatedSprite.play("destroy")
+		#yield($AnimatedSprite, "animation_finished")
 		queue_free()
 		
 	if body.is_in_group("Player1"):
 		get_node("../Player1").hit()
 		speed = 0
-		$AnimatedSprite.play("destroy")
-		yield($AnimatedSprite, "animation_finished")
+		#$AnimatedSprite.play("destroy")
+		#yield($AnimatedSprite, "animation_finished")
 		queue_free()
 		
 	

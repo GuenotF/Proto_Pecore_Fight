@@ -47,13 +47,13 @@ func _physics_process(_delta):
 	
 func aim():
 	# Manage Rotation
-	if look_dir.x <= deadzone:
-		look_dir.x = Input.get_joy_axis(1, JOY_AXIS_2)
-		look_dir.y = Input.get_joy_axis(1, JOY_AXIS_3)
-		rotation = look_dir.angle()
-	else:
-		look_dir.x = 0
-		look_dir.y = 0
+	#if  look_dir.length() >= deadzone:
+	look_dir.x = Input.get_joy_axis(1, JOY_AXIS_2)
+	look_dir.y = Input.get_joy_axis(1, JOY_AXIS_3)
+	rotation = look_dir.angle()
+	#else:
+	look_dir.x = 0
+	look_dir.y = 0
 
 func shoot():
 	var w = weapon.instance()
