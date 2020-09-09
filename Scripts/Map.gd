@@ -12,7 +12,7 @@ var blood = [blood_1, blood_2, blood_3]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#spawn_weapon($Spawn_Weapon)
+	spawn_weapon($Spawn_Weapon)
 	pass # Replace with function body.
 
 
