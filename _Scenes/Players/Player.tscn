@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sprites/Dudes/Dude.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/Player1.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Particles/Blood_Particle.png" type="Texture" id=3]
 
 [sub_resource type="ParticlesMaterial" id=1]
@@ -14,11 +14,31 @@ gravity = Vector3( 0, 98, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "die",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 87.98, 24.3608 )
 
-[node name="Player1" type="KinematicBody2D" groups=[
+[node name="Player" type="KinematicBody2D" groups=[
 "Player1",
+"players",
+"shootable",
 ]]
 position = Vector2( 7.36395, 1.24316 )
 rotation = 1.5708
@@ -42,14 +62,15 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 rotation = 1.5708
-texture = ExtResource( 1 )
+frames = SubResource( 2 )
+animation = "die"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 7.68842 )
 rotation = 1.5708
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
