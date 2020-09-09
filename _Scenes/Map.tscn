@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://_Scenes/Player1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://_Scenes/Players/Player1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://_Scenes/Bush.tscn" type="PackedScene" id=2]
 [ext_resource path="res://_Scenes/HUD.tscn" type="PackedScene" id=3]
-[ext_resource path="res://_Scenes/Player2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://_Scenes/Players/Player2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/Maps/Proto_Map-1.png" type="Texture" id=5]
 [ext_resource path="res://_Scenes/Wood_Barrier.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=7]
@@ -45,14 +45,14 @@ rotation = 2.04431
 polygon = PoolVector2Array( 5.12366, -6.22839, 16.7155, -50.4148, 31.0363, -94.8323, 51.653, -135.734, 64.9584, -147.046, 60.1641, -179.086, 61.6369, -211.338, 114.344, -238.368, 134.745, -235.726, 138.657, -223.445, 183.822, -256.111, 122.465, -375.859, 55.7062, -322.605, -13.2578, -252.746, -51.0828, -196.461, -80.7648, -131.254, -92.5405, -64.364 )
 
 [node name="Player1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 98.9635, 146.816 )
-rotation = 0.714678
+position = Vector2( 146.211, 371.877 )
+rotation = 0.160326
 scale = Vector2( 0.6, 0.6 )
 z_index = 1
 
 [node name="Player2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1106.95, 567.344 )
-rotation = 3.46404
+position = Vector2( 1103, 565.236 )
+rotation = -2.63682
 scale = Vector2( 0.6, 0.6 )
 z_index = 1
 
