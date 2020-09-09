@@ -71,12 +71,10 @@ func hit():
 	
 	slowed()
 	bleeds()
+	$hit_sound.play()
 
 	#print("Player " + life)
-	if !get_node("../HUD").game_over:
-		get_node("../HUD").update_Life_p1(life)
-		if life <= 0:
-			self.queue_free()
+	
 
 func slowed():
 	is_slowed = true

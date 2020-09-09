@@ -14,7 +14,6 @@
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=12]
 [ext_resource path="res://SFX/Cotton Eye Joe [8 Bit Tribute to Rednex] - 8 Bit Universe.wav" type="AudioStream" id=13]
 
-
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 12 )
 

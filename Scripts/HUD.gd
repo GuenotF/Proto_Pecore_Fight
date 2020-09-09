@@ -39,7 +39,7 @@ func _process(delta):
 	pass
 
 func update_Life_p1(hp):
-	$hurt1.play()
+	
 	life_p1_sprite.set_texture(life[hp])
 	if hp == 0:
 		game_over = true
@@ -49,7 +49,6 @@ func update_Life_p1(hp):
 		restart_btn.show()
 
 func update_Life_p2(hp):
-	$hurt2.play()
 	life_p2_sprite.set_texture(life[hp])
 	if hp == 0:
 		game_over = true
