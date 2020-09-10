@@ -5,6 +5,7 @@ var is_on_floor = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print(self.get_name())
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -16,8 +17,7 @@ func _on_Special_Weapons_body_entered(body):
 	if is_on_floor:
 		if body.is_in_group("players"):
 			player = body
-			print(self.get_path())
-			#player.s_weapon = get_node(self.get_path())
+			player.s_weapon = load("res://_Scenes/Weapons/Special_Weapons/" + self.get_name() + ".tscn")
 			player.have_spe = true
 			player.grabbed_weapon.set_texture(s_w)
 			queue_free()

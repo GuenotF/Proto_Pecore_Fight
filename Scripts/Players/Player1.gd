@@ -1,7 +1,7 @@
 extends "res://Scripts/Player.gd"
 
 var weapon = preload("res://_Scenes/Weapons/Weapon_Fork.tscn")
-var s_weapon = preload("res://_Scenes/Weapons/Special_Weapons/Spe_Spike.tscn")
+var s_weapon #= preload("res://_Scenes/Weapons/Special_Weapons/Spe_Spike.tscn")
 
 func _ready():
 	

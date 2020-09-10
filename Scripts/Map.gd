@@ -12,7 +12,7 @@ var blood = [blood_1, blood_2, blood_3]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	yield(get_tree().create_timer(rand_range(3, 6)), "timeout")
+	#yield(get_tree().create_timer(rand_range(3, 6)), "timeout")
 	spawn_weapon($Spawn_Weapon1)
 	yield(get_tree().create_timer(rand_range(5, 8)), "timeout")
 	spawn_weapon($Spawn_Weapon2)
