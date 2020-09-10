@@ -12,7 +12,12 @@ var blood = [blood_1, blood_2, blood_3]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	spawn_weapon($Spawn_Weapon)
+	yield(get_tree().create_timer(rand_range(3, 6)), "timeout")
+	spawn_weapon($Spawn_Weapon1)
+	yield(get_tree().create_timer(rand_range(5, 8)), "timeout")
+	spawn_weapon($Spawn_Weapon2)
+	yield(get_tree().create_timer(rand_range(7, 10)), "timeout")
+	spawn_weapon($Spawn_Weapon3)
 	pass # Replace with function body.
 
 
@@ -28,7 +33,6 @@ func spawn_weapon(spawn):
 	w.speed = 0
 	w.rotation = rand_range(0.1, 10)
 	w.set_scale(Vector2(0.6,0.6))
-	#w.set_global_scale(Vector2(3,3))
 	w.weapon_range = 1000
 	add_child(w)
 	
@@ -44,5 +48,3 @@ func spawn_blood():
 		blood_sprite.position = $Player2.position
 		yield(get_tree().create_timer($Player2.bleed_duration), "timeout")
 		self.add_child(blood_sprite)
-	
-	

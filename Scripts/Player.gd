@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var blood = Sprite.new()
+var grabbed_weapon = Sprite.new()
 
 export var speed = 500
 export var slow = 250
@@ -22,6 +23,9 @@ var deadzone = 0.8
 
 func _ready():
 	$AnimatedSprite.play("default")
+	grabbed_weapon.position = $Spe_Shoot_Start.position
+	grabbed_weapon.position.x =- 60
+	$AnimatedSprite.add_child(grabbed_weapon)
 	$Blood.hide()
 	screen_size = get_viewport_rect().size
 
@@ -74,11 +78,10 @@ func spe_shoot(spe_weapon):
 	s_w.set_scale(Vector2(0.5,0.5))
 	owner.add_child(s_w)
 	s_w.transform = $Spe_Shoot_Start.global_transform
-	#$Sprite.add_child(spe_weapon.get_texture())
 	have_spe = false
 
-func hit():
-	life = life - 1
+func hit(dmg):
+	life = life - dmg
 	
 	slowed()
 	bleeds()
@@ -100,9 +103,3 @@ func bleeds():
 	$Blood.show()
 	yield(get_tree().create_timer(bleed_duration), "timeout")
 	$Blood.hide()
-
-# TEST bullshit
-#func addSprite():
-	#sprite.texture = load("res://icon.png")
-	#if Input.is_action_pressed("ui_select"):
-		#$Sprite.add_child(sprite)

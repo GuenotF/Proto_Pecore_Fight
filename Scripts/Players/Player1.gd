@@ -16,7 +16,10 @@ func _process(delta):
 		
 	if Input.is_action_just_pressed("shoot_spe") and have_spe:
 		#print('Shoot '+ s_weapon.get_name())
-		spe_shoot(s_weapon.instance())
+		var sw = s_weapon.instance()
+		sw.is_on_floor = false
+		spe_shoot(sw)
+		grabbed_weapon.set_texture(null)
 
 	if !get_node("../HUD").game_over:
 		get_node("../HUD").update_Life_p1(life)

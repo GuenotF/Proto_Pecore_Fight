@@ -18,9 +18,9 @@ func _ready():
 	#set_scale(Vector2(0.5, 0.5))
 	pass
 
-func hit():
+func hit(dmg):
 	$Hit_Sound.play()
-	life = life - 1
+	life = life - dmg
 	barrier_sprite.set_texture(sprites[life])
 	print(life)
 	

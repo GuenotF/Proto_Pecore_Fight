@@ -31,14 +31,14 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_Weapon_body_entered(body):
 	if body.is_in_group("walls"):
-		get_node("../" + body.get_name()).hit()
+		get_node("../" + body.get_name()).hit(damage)
 		speed = 0
 		queue_free()
 	if body.is_in_group("shootable"):
 		if body.get_name() != player.get_name():
-				get_node("../" + body.get_name()).hit()
+				get_node("../" + body.get_name()).hit(damage)
 				speed = 0
 				queue_free()
 		else:
-			pass
+			print('body = player')
 
