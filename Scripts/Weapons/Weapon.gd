@@ -13,7 +13,7 @@ var travel_time = Timer.new()
 
 func _ready():
 	#set_scale(Vector2(0.2, 0.2))
-	$AnimatedSprite.play("default")
+	#$AnimatedSprite.play("default")
 	weapon_range(weapon_range)
 
 

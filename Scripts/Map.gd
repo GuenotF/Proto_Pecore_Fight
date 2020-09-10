@@ -1,6 +1,7 @@
 extends Node2D
 
 var weapon = preload("res://_Scenes/Weapons/Special_Weapons/Spe_Spike.tscn")
+var pan = preload("res://_Scenes/Weapons/Special_Weapons/Spe_Pan.tscn")
 
 var blood_1 = preload("res://Sprites/FX/Blood/Blood1.png")
 var blood_2 = preload("res://Sprites/FX/Blood/Blood2.png")
@@ -13,11 +14,11 @@ var blood = [blood_1, blood_2, blood_3]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#yield(get_tree().create_timer(rand_range(3, 6)), "timeout")
-	spawn_weapon($Spawn_Weapon1)
+	spawn_weapon($Spawn_Weapon1, pan)
 	yield(get_tree().create_timer(rand_range(5, 8)), "timeout")
-	spawn_weapon($Spawn_Weapon2)
+	spawn_weapon($Spawn_Weapon2, weapon)
 	yield(get_tree().create_timer(rand_range(7, 10)), "timeout")
-	spawn_weapon($Spawn_Weapon3)
+	spawn_weapon($Spawn_Weapon3, weapon)
 	pass # Replace with function body.
 
 
@@ -27,7 +28,7 @@ func _process(delta):
 		if Input.is_action_pressed("start"):
 			get_tree().reload_current_scene()
 
-func spawn_weapon(spawn):
+func spawn_weapon(spawn, weapon):
 	var w = weapon.instance()
 	w.position = spawn.position
 	w.speed = 0
