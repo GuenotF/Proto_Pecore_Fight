@@ -12,6 +12,7 @@ export var fire_rate = 0.3
 var screen_size
 
 var can_fire = true
+var have_spe = false
 var is_slowed = false
 
 var movedir = Vector2(0,0)
@@ -65,6 +66,16 @@ func shoot(norm_weapon):
 	can_fire = false
 	yield(get_tree().create_timer(fire_rate), "timeout")
 	can_fire = true
+	
+
+func spe_shoot(spe_weapon):
+	var s_w = spe_weapon
+	s_w.player = self
+	s_w.set_scale(Vector2(0.5,0.5))
+	owner.add_child(s_w)
+	s_w.transform = $Spe_Shoot_Start.global_transform
+	#$Sprite.add_child(spe_weapon.get_texture())
+	have_spe = false
 
 func hit():
 	life = life - 1
@@ -72,6 +83,10 @@ func hit():
 	slowed()
 	bleeds()
 	$hit_sound.play()
+	
+	if life <= 0:
+		$death_sound.play()
+		#$AnimatedSprite.play("die")
 
 	#print("Player " + life)
 	

@@ -1,5 +1,6 @@
 extends "res://Scripts/Weapons/Weapon.gd"
 
+
 var is_on_floor = true
 
 
@@ -21,6 +22,18 @@ func _ready():
 func _on_Special_Weapons_body_entered(body):
 	if is_on_floor:
 		if body.is_in_group("players"):
-			player = body
-			player.weapon = self
+			
+			# is_owner = body
+			var spe_owner = body
+			#print(spe_owner.get_name())
+			#spe_owner.s_weapon = self
+			#print(spe_owner.s_weapon.get_name())
+			spe_owner.have_spe = true
 			is_on_floor = false
+			
+			queue_free()
+	else:
+		if body.get_name() != player.get_name():
+				get_node("../" + body.get_name()).hit()
+				speed = 0
+				queue_free()

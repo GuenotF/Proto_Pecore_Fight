@@ -41,19 +41,21 @@ func _process(delta):
 func update_Life_p1(hp):
 	
 	life_p1_sprite.set_texture(life[hp])
-	if hp == 0:
+	if hp <= 0:
 		game_over = true
 		p2_winned = true
-		$sound_P2_Wins.play()
+		$sound_p2_wins.play()
 		p2_wins.show()
 		restart_btn.show()
+		
+		
 
 func update_Life_p2(hp):
 	life_p2_sprite.set_texture(life[hp])
-	if hp == 0:
+	if hp <= 0:
 		game_over = true
 		p1_winned = true
-		$sound_P1_Wins.play()
+		$sound_p1_wins.play()
 		p1_wins.show()
 		restart_btn.show()
 

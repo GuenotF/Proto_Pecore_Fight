@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://_Scenes/Players/Player1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://_Scenes/Bush.tscn" type="PackedScene" id=2]
@@ -7,6 +7,37 @@
 [ext_resource path="res://Sprites/Maps/Proto_Map-1.png" type="Texture" id=5]
 [ext_resource path="res://_Scenes/Wood_Barrier.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=7]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Camera2D
+
+# This script assumes that the zoom.x and zoom.y are always the same.
+
+var current_zoom
+var min_zoom
+var max_zoom
+var zoom_factor = 0.75 # < 1 = zoom_in; > 1 = zoom_out
+var transition_time = 0.25
+
+func _ready():
+	max_zoom = zoom.x
+	min_zoom = max_zoom * zoom_factor
+
+func zoom_in(new_offset):
+	transition_camera(Vector2(min_zoom, min_zoom), new_offset)
+
+
+func zoom_out(new_offset):
+	transition_camera(Vector2(max_zoom, max_zoom), new_offset)
+
+
+func transition_camera(new_zoom, new_offset):
+	if new_zoom != current_zoom:
+		current_zoom = new_zoom
+		$Tween.interpolate_property(self, \"zoom\", get_zoom(), current_zoom, transition_time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$Tween.interpolate_property(self, \"offset\", get_offset(), new_offset, transition_time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$Tween.start()
+"
 
 [node name="Map" type="Node2D"]
 script = ExtResource( 7 )
@@ -143,3 +174,8 @@ position = Vector2( 288.522, 613.581 )
 z_as_relative = false
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+script = SubResource( 1 )

@@ -3,7 +3,6 @@ extends "res://Scripts/Player.gd"
 var weapon = preload("res://_Scenes/Weapons/Weapon_Shovel.tscn")
 
 func _ready():
-	
 	pass
 
 func _process(delta):
@@ -16,4 +15,5 @@ func _process(delta):
 	if !get_node("../HUD").game_over:
 		get_node("../HUD").update_Life_p2(life)
 		if life <= 0:
+			get_node("../HUD").p1_wins.show()
 			self.queue_free()

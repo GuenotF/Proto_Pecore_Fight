@@ -1,6 +1,6 @@
 extends Node2D
 
-var weapon = preload("res://_Scenes/Weapons/Weapon_Shovel.tscn")
+var weapon = preload("res://_Scenes/Weapons/Special_Weapons/Spe_Spike.tscn")
 
 var blood_1 = preload("res://Sprites/FX/Blood/Blood1.png")
 var blood_2 = preload("res://Sprites/FX/Blood/Blood2.png")
@@ -17,7 +17,7 @@ func _ready():
 
 
 func _process(delta):
-	spawn_blood()
+	#spawn_blood()
 	if $HUD.game_over:
 		if Input.is_action_pressed("start"):
 			get_tree().reload_current_scene()
