@@ -17,9 +17,9 @@ animations = [ {
 script = ExtResource( 3 )
 fire_rate = 0.3
 
-[node name="AnimatedSprite" parent="." index="2"]
+[node name="AnimatedSprite" parent="." index="3"]
 frames = SubResource( 1 )
 animation = "default"
 
-[node name="hit_sound" parent="." index="4"]
+[node name="hit_sound" parent="." index="5"]
 stream = ExtResource( 4 )

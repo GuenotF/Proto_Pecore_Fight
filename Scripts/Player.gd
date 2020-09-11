@@ -30,8 +30,6 @@ func _ready():
 	screen_size = get_viewport_rect().size
 
 func _physics_process(_delta):
-	#addSprite()
-		
 	var velocity = movedir * speed
 	velocity = move_and_slide(velocity)
 

@@ -171,7 +171,6 @@ scale = Vector2( 0.5, 0.5 )
 
 [node name="Spawn_Weapon1" type="Position2D" parent="."]
 position = Vector2( 327.721, 667.035 )
-z_index = -1
 z_as_relative = false
 
 [node name="Spawn_Weapon2" type="Position2D" parent="."]

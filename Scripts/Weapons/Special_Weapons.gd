@@ -19,7 +19,7 @@ func _on_Special_Weapons_body_entered(body):
 			player = body
 			player.s_weapon = load("res://_Scenes/Weapons/Special_Weapons/" + self.get_name() + ".tscn")
 			player.have_spe = true
-			player.grabbed_weapon.set_texture($Sprite)
+			player.grabbed_weapon.set_texture($Sprite.texture)
 			queue_free()
 	else:
 		if body.is_in_group("walls"):
